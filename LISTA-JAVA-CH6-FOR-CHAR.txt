@@ -1,0 +1,109 @@
+Exercícios de Loops
+
+    Contagem Regressiva: Imprima números de 10 até 1 usando while
+
+    Contagem Progressiva: Imprima números de 1 até 20 usando for
+
+    Números Pares: Imprima todos os números pares entre 1 e 50
+
+    Soma Simples: Calcule a soma dos números de 1 a 100 usando for
+
+    Tabuada: Imprima a tabuada do 7 (7x1 até 7x10)
+
+    Fatorial: Calcule o fatorial de 5 (5! = 5×4×3×2×1)
+
+    Múltiplos de 3: Imprima múltiplos de 3 entre 1 e 50
+
+    Contador com Limite: Peça um número N e imprima de 1 até N
+
+    Soma com While: Calcule soma de 1 a N usando while
+
+    Números Ímpares: Imprima ímpares entre 1 e 30 em ordem decrescente
+
+Exercícios de Strings
+
+    Comprimento da String: Peça uma palavra e informe seu tamanho
+
+    Maiúsculas e Minúsculas: Converta uma string para maiúsculas
+
+    Iniciais: Peça nome e sobrenome, mostre iniciais
+
+    Primeiro e Último Caractere: Mostre o primeiro e último caractere de uma palavra
+
+    Concatenar Nomes: Peça primeiro nome e sobrenome, junte com espaço
+
+    Comparação Simples: Compare se duas palavras são iguais
+
+    Substring Básica: Extraia as 3 primeiras letras de uma palavra
+
+    Posição do Espaço: Encontre a posição do primeiro espaço em uma frase
+
+    Remover Espaços: Remova espaços extras no início/fim de uma string
+
+    Contar Palavras: Conte quantas palavras tem uma frase (suponha um espaço entre palavras)
+
+Loops com Condições
+
+    Soma até Limite: Some números enquanto soma < 100, pare quando passar
+
+    Média de Números: Peça 10 números e calcule a média
+
+    Maior e Menor: Peça 8 números, encontre maior e menor
+
+    Divisíveis por 5: Conte quantos números entre 1-100 são divisíveis por 5
+
+    Sequência Fibonacci: Imprima os primeiros 10 números da sequência Fibonacci
+
+    Números Primos: Verifique se um número é primo
+
+    Soma Dígitos: Calcule a soma dos dígitos de um número
+
+    Número Perfeito: Verifique se um número é perfeito (soma divisores = número)
+
+    Tabuada Completa: Imprima tabuadas de 1 a 10
+
+    Progressão Aritmética: Imprima os 10 primeiros termos de uma PA
+
+Manipulação de Strings
+
+    Inverter String: Inverta uma string usando loop
+
+    É Palíndromo: Verifique se uma palavra é palíndromo
+
+    Contar Vogais: Conte vogais em uma string
+
+    Contar Consoantes: Conte consoantes em uma string
+
+    Substituir Caractere: Substitua todas as ocorrências de 'a' por '@'
+
+    Remover Vogais: Crie nova string sem vogais
+
+    Contar Ocorrências: Conte quantas vezes 'e' aparece em uma string
+
+    Primeira Letra Maiúscula: Capitalize a primeira letra de cada palavra
+
+    String ao Contrário: Imprima string caractere por caractere na ordem inversa
+
+    Extrair Nome do Meio: Dado nome completo, extraia o nome do meio
+
+Combinação Loops + Strings
+
+    Padrão de Asteriscos: Imprima padrão de asteriscos em forma de triângulo
+
+    Contar Cada Vogal: Conte quantas vezes cada vogal aparece
+
+    Remover Espaços Duplicados: Remova espaços consecutivos em uma frase
+
+    Inverter Palavras: Inverta a ordem das palavras em uma frase
+
+    String com Separação: Imprima cada caractere de uma string separado por '-'
+
+    Encontrar Substring: Verifique se substring existe na string
+
+    Contar Palavras com Letra: Conte palavras que começam com 'A'
+
+    Formatar Telefone: Formate número "1234567890" como "(12) 3456-7890"
+
+    Senha Válida: Verifique se senha tem pelo menos 8 caracteres e um número
+
+    Gerar Usuário: Crie nome de usuário a partir do nome (primeira letra + sobrenome)
