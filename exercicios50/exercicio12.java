@@ -1,7 +1,7 @@
 public class exercicio12 {
    static void imprimirQuadrado(int n, int n2){
     double resultado;
-    n = 12;
+    n = 127;
 
     resultado = (n = (n*n));
 
