@@ -1,4 +1,4 @@
-package exercicios30;
+package exercicios20;
 
 public class semana {
     public static void main(String[] args) {

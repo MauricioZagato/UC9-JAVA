@@ -1,4 +1,4 @@
-package exercicios30;
+package exercicios20;
 
 public class idade {
     public static void main(String[] args) {
