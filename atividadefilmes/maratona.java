@@ -13,7 +13,7 @@ static void cabecalho(){
         
     }
 
-    static void MaratonaFilmes() {
+    static void loginUsuario() {
         Scanner in = new Scanner(System.in);
         String nome; 
         
@@ -79,9 +79,10 @@ static void cabecalho(){
 
             if(duracao <= 4){
                 System.out.println("Maratona Leve");
-            }else{
+            }else if(duracao <=8){
                 System.out.println("Maratona Moderada");
-           
+            }else{
+                System.out.println("Maratona Premiun");
             }
           }
             
@@ -89,11 +90,11 @@ static void cabecalho(){
         
             cabecalho();
             System.out.println("\n");
-            MaratonaFilmes();
+            loginUsuario();
             System.out.println("\n");
             Genero();
-            System.out.println("\n");
-            MediaFilme();
+            //System.out.println("\n");
+            //MediaFilme();
             System.out.println("\n");
             TempFilme();
          }    
