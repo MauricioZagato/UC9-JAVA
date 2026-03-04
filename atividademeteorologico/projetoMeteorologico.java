@@ -28,25 +28,23 @@ public class projetoMeteorologico {
         }else{
             return("CLIMA MODERADO");
         }
-    };
+    }
 
-     public static String gerarAlertas(int cidadeIndex){
-        int tempinho, umidadinha;
+     public static String gerarAlertas(int cidadeIndex, int tempinho, int umidadinha){
+      
         if (tempinho > 35 || umidadinha > 90){
             return("Alerta Vermelho");
         }else if(tempinho >= 30 && tempinho <= 35 && umidadinha > 80){
             return("Alerta Amarelo");
         }else{
-            return("Condições normais");
-        }
-            
-        }{
-        }
-     } 
+            return("Alerta Verde");
+        }  
+    }
+    
 //Analisa múltiplas condições: 
 //Alerta VERMELHO: temp > 35 OU umidade > 90 
 //Alerta AMARELO: (temp entre 30-35 E umidade > 80) OU 
-//variação > 15°C 
+//variação > 15°C/ 
 //Alerta VERDE: condições normais 
     
 
