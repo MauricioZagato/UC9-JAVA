@@ -26,9 +26,28 @@ public class projetoMeteorologico {
         }else if(Tmedia < 15 && Tumid < 50){
             return"CLIMA FRIO E SECO";
         }else{
-            return("");
+            return("CLIMA MODERADO");
         }
     };
+
+     public static String gerarAlertas(int cidadeIndex){
+        int tempinho, umidadinha;
+        if (tempinho > 35 || umidadinha > 90){
+            return("Alerta Vermelho");
+        }else if(tempinho >= 30 && tempinho <= 35 && umidadinha > 80){
+            return("Alerta Amarelo");
+        }else{
+            return("Condições normais");
+        }
+            
+        }{
+        }
+     } 
+//Analisa múltiplas condições: 
+//Alerta VERMELHO: temp > 35 OU umidade > 90 
+//Alerta AMARELO: (temp entre 30-35 E umidade > 80) OU 
+//variação > 15°C 
+//Alerta VERDE: condições normais 
     
 
 
@@ -78,11 +97,11 @@ public static void main(String[] args) {
     System.out.printf("\n-------------------------------------------------------------------------|");
     System.out.printf("\nCIDADE | T.MAX | T.MIN | T.MÉD | UMID | CLASSIFICAÇÃO     | ALERTA");
     System.out.printf("\n-------------------------------------------------------------------------|");
-    System.out.printf("\n1   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s                  | AMARELO |", tempMedia[0][0],tempMedia[0][1], temperaturaUm, umidUM, climaUm);
-    System.out.printf("\n2   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s                  | VERDE   |", tempMedia[1][0],tempMedia[1][1], temperaturaDois, umidDois, climaDois);
-    //System.out.printf("\n3   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s                  | VERMELHO|", tempMedia[2][0],tempMedia[2][1], temperaturaTres, umidTres );
-   // System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s                  | VERDE   |", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro );
-   // System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s                  | VERDE   |", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta );
+    System.out.printf("\n1   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | AMARELO |", tempMedia[0][0],tempMedia[0][1], temperaturaUm, umidUM, climaUm);
+    System.out.printf("\n2   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   |", tempMedia[1][0],tempMedia[1][1], temperaturaDois, umidDois, climaDois);
+    //System.out.printf("\n3   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERMELHO|", tempMedia[2][0],tempMedia[2][1], temperaturaTres, umidTres );
+   // System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERDE   |", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro );
+   // System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERDE   |", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta );
     //System.out.printf("\n-------------------------------------------------------------------------|");
     }
 }
