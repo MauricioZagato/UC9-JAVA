@@ -20,34 +20,27 @@ public class projetoMeteorologico {
 
     public static String classificarClima(double Tmedia, int Tumid){
         if(Tmedia > 30 && Tumid > 75){
-            return"CLIMA MUITO QUENTE E ÚMIDO";
+            return"MUITO QUENTE";
         }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){
-            return"CLIMA CONFORTAVEL";
+            return"CONFORTAVEL ";
         }else if(Tmedia < 15 && Tumid < 50){
-            return"CLIMA FRIO E SECO";
+            return"FRIO/SECO   ";
         }else{
-            return("CLIMA MODERADO");
+            return"MODERADO    ";
         }
     }
 
-     public static String gerarAlertas(int cidadeIndex, int tempinho, int umidadinha){
+     //public static String gerarAlertas(int cidadeIndex, int tempinho, int umidadinha){
       
-        if (tempinho > 35 || umidadinha > 90){
-            return("Alerta Vermelho");
-        }else if(tempinho >= 30 && tempinho <= 35 && umidadinha > 80){
-            return("Alerta Amarelo");
-        }else{
-            return("Alerta Verde");
-        }  
-    }
+       // if (tempinho > 35 || umidadinha > 90){
+            //return("Alerta Vermelho");
+        //}else if(tempinho >= 30 && tempinho <= 35 && umidadinha > 80){
+            //return("Alerta Amarelo");
+        //}else{
+            //return("Alerta Verde");
+        //}  
     
-//Analisa múltiplas condições: 
-//Alerta VERMELHO: temp > 35 OU umidade > 90 
-//Alerta AMARELO: (temp entre 30-35 E umidade > 80) OU 
-//variação > 15°C/ 
-//Alerta VERDE: condições normais 
     
-
 
 public static void main(String[] args) {
     
@@ -80,12 +73,15 @@ public static void main(String[] args) {
 
     temperaturaTres = calTemperatura(tempMedia[2][0],tempMedia[2][1]);
     umidTres = calUmidade(medUmid[2][0], medUmid[2][1], medUmid[2][2]);
+    climaTres = classificarClima(temperaturaTres, (int)umidTres);
 
     temperaturaQuatro = calTemperatura(tempMedia[3][0],tempMedia[3][1]);
     umidQuatro = calUmidade(medUmid[3][0], medUmid[3][1], medUmid[3][2]);
+    climaQuatro = classificarClima(temperaturaQuatro, (int)umidQuatro);
 
     temperaturaQuinta = calTemperatura(tempMedia[4][0],tempMedia[4][1]);
     umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
+    climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
    
     System.out.printf("\n=========================================================================");
     System.out.printf("\n           SISTEMA DE ANÁLISE METEOROLÓGICA INTELIGENTE");
@@ -95,12 +91,12 @@ public static void main(String[] args) {
     System.out.printf("\n-------------------------------------------------------------------------|");
     System.out.printf("\nCIDADE | T.MAX | T.MIN | T.MÉD | UMID | CLASSIFICAÇÃO     | ALERTA");
     System.out.printf("\n-------------------------------------------------------------------------|");
-    System.out.printf("\n1   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | AMARELO |", tempMedia[0][0],tempMedia[0][1], temperaturaUm, umidUM, climaUm);
-    System.out.printf("\n2   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   |", tempMedia[1][0],tempMedia[1][1], temperaturaDois, umidDois, climaDois);
-    //System.out.printf("\n3   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERMELHO|", tempMedia[2][0],tempMedia[2][1], temperaturaTres, umidTres );
-   // System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERDE   |", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro );
-   // System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s  | VERDE   |", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta );
-    //System.out.printf("\n-------------------------------------------------------------------------|");
+    System.out.printf("\n1   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | AMARELO ", tempMedia[0][0],tempMedia[0][1], temperaturaUm, umidUM, climaUm);
+    System.out.printf("\n2   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[1][0],tempMedia[1][1], temperaturaDois, umidDois, climaDois);
+    System.out.printf("\n3   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERMELHO", tempMedia[2][0],tempMedia[2][1], temperaturaTres, umidTres, climaTres );
+    System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro, climaQuatro );
+    System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta, climaQuinto );
+    System.out.printf("\n-------------------------------------------------------------------------|");
     }
 }
 
