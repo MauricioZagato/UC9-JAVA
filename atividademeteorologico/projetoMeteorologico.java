@@ -16,7 +16,16 @@ public class projetoMeteorologico {
         return umiMedia; //pedimo spara retornar a media
     }
 
-    
+    public static boolean validarTemperatura(double temp){
+
+        if(temp >= -50 && temp <= 60){
+           return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
     public static String classificarClima(double Tmedia, int Tumid){
         if(Tmedia > 30 && Tumid > 75){
@@ -40,13 +49,13 @@ public class projetoMeteorologico {
             //return("Alerta Verde");
         //}  
     
-    
-
 public static void main(String[] args) {
-    
+
+    //validarTemperatura();
+
     double umidUM, umidDois, umidTres, umidQuatro, umidQuinta;
-    double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta;
-    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;
+    double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria;
+    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto, climaMaisQuente;
 
     double[][]tempMedia = {
         {32.5, 22.1},  //Cidade 1
@@ -83,6 +92,34 @@ public static void main(String[] args) {
     umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
     climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
    
+    temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5;
+    
+    
+    double[] temperaturass = {
+        temperaturaUm,
+        temperaturaDois,
+        temperaturaTres,
+        temperaturaQuatro,
+        temperaturaQuinta
+    };
+        tempMaisQuente = temperaturass[0];
+
+            for(int i = 1; i < temperaturass.length; i++){
+            if(temperaturass[i] > tempMaisQuente){
+            tempMaisQuente = temperaturass[i];
+        }
+    }
+
+        tempMaisFria = temperaturass[0];
+
+        for (int i = 1; i < temperaturass.length; i++) {
+        if (temperaturass[i] < tempMaisFria) {
+            tempMaisFria = temperaturass[i];
+        }
+    }
+
+
+
     System.out.printf("\n=========================================================================");
     System.out.printf("\n           SISTEMA DE ANÁLISE METEOROLÓGICA INTELIGENTE");
     System.out.printf("\n=========================================================================");
@@ -97,6 +134,11 @@ public static void main(String[] args) {
     System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro, climaQuatro );
     System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta, climaQuinto );
     System.out.printf("\n-------------------------------------------------------------------------|");
+
+    System.out.printf("\nESTATÍSTICAS GERAIS:");
+    System.out.printf("\nTemperatura média geral: %.2f°C ", temperaturaMeTotal); //%.2f = 
+    System.out.printf("\nCidade mais quente: %.2f°C", tempMaisQuente);
+    System.out.printf("\nCidade mais fria: %.2f°C", tempMaisFria);
     }
 }
 
