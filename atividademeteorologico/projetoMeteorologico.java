@@ -55,7 +55,7 @@ public static void main(String[] args) {
 
     double umidUM, umidDois, umidTres, umidQuatro, umidQuinta;
     double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria;
-    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto, climaMaisQuente;
+    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;
 
     double[][]tempMedia = {
         {32.5, 22.1},  //Cidade 1
@@ -134,7 +134,7 @@ public static void main(String[] args) {
     System.out.printf("\n4   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[3][0],tempMedia[3][1], temperaturaQuatro, umidQuatro, climaQuatro );
     System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta, climaQuinto );
     System.out.printf("\n-------------------------------------------------------------------------|");
-
+    System.out.println(" ");
     System.out.printf("\nESTATÍSTICAS GERAIS:");
     System.out.printf("\nTemperatura média geral: %.2f°C ", temperaturaMeTotal); //%.2f = 
     System.out.printf("\nCidade mais quente: %.2f°C", tempMaisQuente);
