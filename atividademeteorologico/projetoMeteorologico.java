@@ -66,7 +66,7 @@ public class projetoMeteorologico { // uma classe
             }
         }
 
-        return maiorAmplitude; //retorna no metodo
+        return  Math.round(maiorAmplitude * 10) / 10.0; //retorna no metodo, arredondado.
     }
     
     public static void main(String[] args) {
