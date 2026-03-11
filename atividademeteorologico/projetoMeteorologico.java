@@ -1,19 +1,19 @@
 package atividademeteorologico;
 
 public class projetoMeteorologico {
-    public static double calTemperatura(double maxima, double minima){
-        double tempMedia;
+    public static double calTemperatura(double maxima, double minima){ // um metodo sedo criado
+        double tempMedia; //criando uma variavel
 
         maxima = (maxima * 0.7); // vamos calcular a temperatura máxima
         minima = (minima * 0.3); // vamos calcular a temperatura minima
-        tempMedia = (maxima + minima); //aqui acharemos o tempo medio somando elas
-        return tempMedia; //retornamos o valor no metodo calTemperatura
+        tempMedia = (maxima + minima); //aqui acharemos o tempo médio somando elas
+        return tempMedia; //retornamos o valor no método calTemperatura
 
     }
     public static int calUmidade(int ma, int tar, int noi){
-        int umiMedia; //criando uma variavel para saber a media da umidade
+        int umiMedia; //criando uma variavel para saber a média da umidade
         umiMedia = (ma + tar + noi) / 3; 
-        return umiMedia; //pedimo spara retornar a media
+        return umiMedia; //pedimo para retornar a media o método calUmidade
     }
 
     public static boolean validarTemperatura(double temp){ //usamos o método boolean, onde usamos true false
@@ -24,13 +24,13 @@ public class projetoMeteorologico {
             return false;
         }
 
-    }
+    } 
 
 
     public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
         if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
             return"MUITO QUENTE";
-        }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){
+        }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entressas medidas retorna, caso ao contrário, vai para linha de baixo
             return"CONFORTAVEL ";
         }else if(Tmedia < 15 && Tumid < 50){
             return"FRIO/SECO   ";
@@ -53,18 +53,18 @@ public static void main(String[] args) {
 
     //validarTemperatura();
 
-    double umidUM, umidDois, umidTres, umidQuatro, umidQuinta;
-    double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria;
-    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;
+    double umidUM, umidDois, umidTres, umidQuatro, umidQuinta; //variaveis criadas
+    double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria; //variaveis criadas
+    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
 
-    double[][]tempMedia = {
+    double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
         {32.5, 22.1},  //Cidade 1
         {28.3, 18.7},  //Cidade 2
         {35.8, 24.9},  //Cidade 3
         {30.2, 20.5},  //Cidade 4
         {25.7, 15.3}   //Cidade 5
     };
-    int[][]medUmid = {
+    int[][]medUmid = { //aqui criamosuma mtriz de números inteiros
         {85, 60, 75},  //Cidade 1
         {78, 55, 70},  //Cidade 2
         {90, 65, 80},  //Cidade 3
@@ -72,7 +72,7 @@ public static void main(String[] args) {
         {75, 50, 68}   //Cidade 5
     };
     
-    temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]);
+    temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); 
     umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);
     climaUm = classificarClima(temperaturaUm, (int) umidUM);
 
