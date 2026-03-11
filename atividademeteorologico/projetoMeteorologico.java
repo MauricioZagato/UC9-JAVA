@@ -1,5 +1,7 @@
 package atividademeteorologico;
 
+import aula7.array;
+
 public class projetoMeteorologico {
     public static double calTemperatura(double maxima, double minima){ // um metodo sedo criado
         double tempMedia; //criando uma variavel
@@ -30,9 +32,9 @@ public class projetoMeteorologico {
     public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
         if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
             return"MUITO QUENTE";
-        }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entressas medidas retorna, caso ao contrário, vai para linha de baixo
+        }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entre essas medidas retorna, caso ao contrário, vai para linha de baixo
             return"CONFORTAVEL ";
-        }else if(Tmedia < 15 && Tumid < 50){
+        }else if(Tmedia < 15 && Tumid < 50){ //Também ve se esta entre essas medidas para retornar, caso ao contrário, vai para linha de baixo
             return"FRIO/SECO   ";
         }else{
             return"MODERADO    ";
@@ -49,74 +51,74 @@ public class projetoMeteorologico {
             //return("Alerta Verde");
         //}  
     
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    //validarTemperatura();
+        //validarTemperatura();
 
-    double umidUM, umidDois, umidTres, umidQuatro, umidQuinta; //variaveis criadas
-    double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria; //variaveis criadas
-    String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
+        double umidUM, umidDois, umidTres, umidQuatro, umidQuinta; //variaveis criadas
+        double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria; //variaveis criadas
+        String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
 
-    double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
-        {32.5, 22.1},  //Cidade 1
-        {28.3, 18.7},  //Cidade 2
-        {35.8, 24.9},  //Cidade 3
-        {30.2, 20.5},  //Cidade 4
-        {25.7, 15.3}   //Cidade 5
-    };
-    int[][]medUmid = { //aqui criamosuma mtriz de números inteiros
-        {85, 60, 75},  //Cidade 1
-        {78, 55, 70},  //Cidade 2
-        {90, 65, 80},  //Cidade 3
-        {82, 58, 72},  //Cidade 4
-        {75, 50, 68}   //Cidade 5
-    };
+        double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
+            {32.5, 22.1},  //Cidade 1
+            {28.3, 18.7},  //Cidade 2
+            {35.8, 24.9},  //Cidade 3
+            {30.2, 20.5},  //Cidade 4
+            {25.7, 15.3}   //Cidade 5
+        };
+        int[][]medUmid = { //aqui criamos uma mtriz de números inteiros
+            {85, 60, 75},  //Cidade 1
+            {78, 55, 70},  //Cidade 2
+            {90, 65, 80},  //Cidade 3
+            {82, 58, 72},  //Cidade 4
+            {75, 50, 68}   //Cidade 5
+        };
     
-    temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); 
-    umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);
-    climaUm = classificarClima(temperaturaUm, (int) umidUM);
+        temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); // tempMedia, é array bidimensional, está pegando o primeiro valor da primeira linha e o segundo valor da primeira linha.
+        umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);//
+        climaUm = classificarClima(temperaturaUm, (int) umidUM);
 
-    temperaturaDois = calTemperatura(tempMedia[1][0],tempMedia[1][1]);
-    umidDois = calUmidade(medUmid[1][0], medUmid[1][1], medUmid[1][2]);
-    climaDois = classificarClima(temperaturaDois, (int) umidDois);
+        temperaturaDois = calTemperatura(tempMedia[1][0],tempMedia[1][1]);
+        umidDois = calUmidade(medUmid[1][0], medUmid[1][1], medUmid[1][2]);
+        climaDois = classificarClima(temperaturaDois, (int) umidDois);
 
-    temperaturaTres = calTemperatura(tempMedia[2][0],tempMedia[2][1]);
-    umidTres = calUmidade(medUmid[2][0], medUmid[2][1], medUmid[2][2]);
-    climaTres = classificarClima(temperaturaTres, (int)umidTres);
+        temperaturaTres = calTemperatura(tempMedia[2][0],tempMedia[2][1]);
+        umidTres = calUmidade(medUmid[2][0], medUmid[2][1], medUmid[2][2]);
+        climaTres = classificarClima(temperaturaTres, (int)umidTres);
 
-    temperaturaQuatro = calTemperatura(tempMedia[3][0],tempMedia[3][1]);
-    umidQuatro = calUmidade(medUmid[3][0], medUmid[3][1], medUmid[3][2]);
-    climaQuatro = classificarClima(temperaturaQuatro, (int)umidQuatro);
+        temperaturaQuatro = calTemperatura(tempMedia[3][0],tempMedia[3][1]);
+        umidQuatro = calUmidade(medUmid[3][0], medUmid[3][1], medUmid[3][2]);
+        climaQuatro = classificarClima(temperaturaQuatro, (int)umidQuatro);
 
-    temperaturaQuinta = calTemperatura(tempMedia[4][0],tempMedia[4][1]);
-    umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
-    climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
-   
-    temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5;
+        temperaturaQuinta = calTemperatura(tempMedia[4][0],tempMedia[4][1]);
+        umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
+        climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
     
+        temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5;
+        
     
-    double[] temperaturass = {
-        temperaturaUm,
-        temperaturaDois,
-        temperaturaTres,
-        temperaturaQuatro,
-        temperaturaQuinta
-    };
-        tempMaisQuente = temperaturass[0];
+        double[] temperaturass = {
+            temperaturaUm,
+            temperaturaDois,
+            temperaturaTres,
+            temperaturaQuatro,
+            temperaturaQuinta
+        };
+            tempMaisQuente = temperaturass[0];
 
-            for(int i = 1; i < temperaturass.length; i++){
-            if(temperaturass[i] > tempMaisQuente){
-            tempMaisQuente = temperaturass[i];
+                for(int i = 1; i < temperaturass.length; i++){
+                if(temperaturass[i] > tempMaisQuente){
+                tempMaisQuente = temperaturass[i];
+            }
         }
-    }
 
-        tempMaisFria = temperaturass[0];
+            tempMaisFria = temperaturass[0];
 
-        for (int i = 1; i < temperaturass.length; i++) {
-        if (temperaturass[i] < tempMaisFria) {
-            tempMaisFria = temperaturass[i];
+            for (int i = 1; i < temperaturass.length; i++) {
+            if (temperaturass[i] < tempMaisFria) {
+                tempMaisFria = temperaturass[i];
+            }
         }
-    }
 
 
 
