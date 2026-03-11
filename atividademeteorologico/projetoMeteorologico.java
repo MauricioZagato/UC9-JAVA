@@ -31,7 +31,7 @@ public class projetoMeteorologico { // uma classe
 
     public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
         if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
-            return"QUENTE E UMIDO";
+            return"QUENTE/UMIDO";
         }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entre essas medidas retorna, caso ao contrário, vai para linha de baixo
             return"CONFORTAVEL ";
         }else if(Tmedia < 15 && Tumid < 50){ //Também ve se esta entre essas medidas para retornar, caso ao contrário, vai para linha de baixo
@@ -51,10 +51,10 @@ public class projetoMeteorologico { // uma classe
             //return("Alerta Verde");
         //}  
 
-    public static int identificarCidadeComMaiorAmplitudeTermica(double[][] temperaturas){ // declarando metodo, recebendo a matriz de temperaturas
+    public static double identificarCidadeComMaiorAmplitudeTermica(double[][] temperaturas){ // declarando metodo, recebendo a matriz de temperaturas
 
         double maiorAmplitude = temperaturas[0][0] - temperaturas[0][1];
-        int indiceMaior = 0; // guarda o indice da cidade
+        int indiceMaior = 0; // indice da cidade
 
         for(int i = 1; i < temperaturas.length; i++){ //começa na cidade 1; depois e a quantidade de cidade; e aumenta um em um, por isso 1++;
                                                       // vai percorrer o tanto de cidades que tiver, no caso essa, são 5.
@@ -66,15 +66,15 @@ public class projetoMeteorologico { // uma classe
             }
         }
 
-        return indiceMaior; //retorna no metodo
+        return maiorAmplitude; //retorna no metodo
     }
     
     public static void main(String[] args) {
 
         //validarTemperatura();
 
-        double umidUM, umidDois, umidTres, umidQuatro, umidQuinta, maiorAmplitude; //variaveis criadas
-        double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria; //variaveis criadas
+        double umidUM, umidDois, umidTres, umidQuatro, umidQuinta; //variaveis criadas
+        double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria, cidadeMaiorAmplitude; //variaveis criadas
         String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
 
         double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
@@ -92,7 +92,7 @@ public class projetoMeteorologico { // uma classe
             {75, 50, 68}   //Cidade 5
         };
     
-        cidadeMaiorAmplitude = identificarCidadeComMaiorAmplitudeTermica; //(tempMedia)
+        cidadeMaiorAmplitude = identificarCidadeComMaiorAmplitudeTermica(tempMedia); //(tempMedia)
 
         temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); // faz o calculo da tempMedia, la em calTemperatura e fica guardado em TemperaturaUm
         umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);//tempMedia e medUmid sao matrizes
@@ -111,8 +111,8 @@ public class projetoMeteorologico { // uma classe
         climaQuatro = classificarClima(temperaturaQuatro, (int)umidQuatro);
 
         temperaturaQuinta = calTemperatura(tempMedia[4][0],tempMedia[4][1]);
-        umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);      // int a = 10;
-        climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);         // double b = a;
+        umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);      
+        climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);         
     
         temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5; // vamos calcular a temperatura media
         
