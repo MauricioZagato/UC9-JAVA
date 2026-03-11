@@ -16,10 +16,10 @@ public class projetoMeteorologico {
         return umiMedia; //pedimo spara retornar a media
     }
 
-    public static boolean validarTemperatura(double temp){
+    public static boolean validarTemperatura(double temp){ //usamos o método boolean, onde usamos true false
 
-        if(temp >= -50 && temp <= 60){
-           return true;
+        if(temp >= -50 && temp <= 60){ // as temperaturas que cairem dentro do (-50, 60), entram no true, e rodam no sistemas 
+           return true;                //as que forem fora desse padrão, cairão no false, e não roda no sistema. 
         }else{
             return false;
         }
@@ -27,8 +27,8 @@ public class projetoMeteorologico {
     }
 
 
-    public static String classificarClima(double Tmedia, int Tumid){
-        if(Tmedia > 30 && Tumid > 75){
+    public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
+        if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
             return"MUITO QUENTE";
         }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){
             return"CONFORTAVEL ";
