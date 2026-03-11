@@ -31,11 +31,11 @@ public class projetoMeteorologico { // uma classe
 
     public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
         if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
-            return"MUITO QUENTE";
+            return"QUENTE E UMIDO";
         }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entre essas medidas retorna, caso ao contrário, vai para linha de baixo
             return"CONFORTAVEL ";
         }else if(Tmedia < 15 && Tumid < 50){ //Também ve se esta entre essas medidas para retornar, caso ao contrário, vai para linha de baixo
-            return"FRIO/SECO   ";
+            return"FRIO E SECO ";
         }else{
             return"MODERADO    ";
         }
