@@ -30,6 +30,8 @@ public class projetoMeteorologico { // uma classe
 
 
     public static String classificarClima(double Tmedia, int Tumid){ //aqui criamos um metodo para classificar a temperatura
+        // double TEumid = new Double(Tumid);
+
         if(Tmedia > 30 && Tumid > 75){ //entre essa temperatura e umidade, retorna se esta quente, caso não, vai para a linha de baixo
             return"QUENTE/UMIDO";
         }else if(Tmedia >= 20 && Tmedia <= 25 && Tumid >= 50 && Tumid <= 70){ //se estiver entre essas medidas retorna, caso ao contrário, vai para linha de baixo
