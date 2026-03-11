@@ -50,12 +50,30 @@ public class projetoMeteorologico {
         //}else{
             //return("Alerta Verde");
         //}  
+
+    public static int identificarCidadeComMaiorAmplitudeTermica(double[][] temperaturas){ // declarando metodo, recebendo a matriz de temperaturas
+
+        double maiorAmplitude = temperaturas[0][0] - temperaturas[0][1];
+        int indiceMaior = 0; // guarda o indice da cidade
+
+        for(int i = 1; i < temperaturas.length; i++){ //começa na cidade 1; depois e a quantidade de cidade; e aumenta um em um, por isso 1++;
+                                                      // vai percorrer o tanto de cidades que tiver, no caso essa, são 5.
+            double amplitude = temperaturas[i][0] - temperaturas[i][1];
+
+            if(amplitude > maiorAmplitude){ //esta fazendo a comparação das cidades, para ver qual a maior amplitude
+                maiorAmplitude = amplitude; //apos a comparação, acha a maior amplitude e guarda ela
+                indiceMaior = i; //mostra o numero da cidade com maior amplitude
+            }
+        }
+
+        return indiceMaior; //retorna no metodo
+    }
     
     public static void main(String[] args) {
 
         //validarTemperatura();
 
-        double umidUM, umidDois, umidTres, umidQuatro, umidQuinta; //variaveis criadas
+        double umidUM, umidDois, umidTres, umidQuatro, umidQuinta, maiorAmplitude; //variaveis criadas
         double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria; //variaveis criadas
         String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
 
@@ -74,9 +92,11 @@ public class projetoMeteorologico {
             {75, 50, 68}   //Cidade 5
         };
     
-        temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); // tempMedia, é array bidimensional, está pegando o primeiro valor da primeira linha e o segundo valor da primeira linha.
-        umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);//
-        climaUm = classificarClima(temperaturaUm, (int) umidUM);
+        cidadeMaiorAmplitude = identificarCidadeComMaiorAmplitudeTermica; //(tempMedia)
+
+        temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); // faz o calculo da tempMedia, la em calTemperatura e fica guardado em TemperaturaUm
+        umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);//tempMedia e medUmid sao matrizes
+        climaUm = classificarClima(temperaturaUm, (int) umidUM); //camos jogar os resultados da TemperaturaUm e umidUm, dentro do classificarClima, para saber o tipo clima, e tudo isso fica dentro do climaUM
 
         temperaturaDois = calTemperatura(tempMedia[1][0],tempMedia[1][1]);
         umidDois = calUmidade(medUmid[1][0], medUmid[1][1], medUmid[1][2]);
@@ -94,17 +114,17 @@ public class projetoMeteorologico {
         umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
         climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
     
-        temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5;
+        temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5; // vamos calcular a temperatura media
         
     
-        double[] temperaturass = {
+        double[] temperaturass = { //estamos fazendo um vetor (array de temperatura)
             temperaturaUm,
             temperaturaDois,
             temperaturaTres,
             temperaturaQuatro,
             temperaturaQuinta
         };
-            tempMaisQuente = temperaturass[0];
+            tempMaisQuente = temperaturass[0]; // pegamos a primeira temperatura como referencia
 
                 for(int i = 1; i < temperaturass.length; i++){
                 if(temperaturass[i] > tempMaisQuente){
@@ -141,6 +161,7 @@ public class projetoMeteorologico {
     System.out.printf("\nTemperatura média geral: %.2f°C ", temperaturaMeTotal); //%.2f = 
     System.out.printf("\nCidade mais quente: %.2f°C", tempMaisQuente);
     System.out.printf("\nCidade mais fria: %.2f°C", tempMaisFria);
+     System.out.printf("\nCidade com maior amplitude: %.2f°C", cidadeMaiorAmplitude);
     }
 }
 
