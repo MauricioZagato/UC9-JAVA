@@ -2,9 +2,9 @@ package atividademeteorologico;
 
 import aula7.array;
 
-public class projetoMeteorologico {
+public class projetoMeteorologico { // uma classe
     public static double calTemperatura(double maxima, double minima){ // um metodo sedo criado
-        double tempMedia; //criando uma variavel
+        double tempMedia; //criando uma variavel, junto temos tambem, maxima e minima
 
         maxima = (maxima * 0.7); // vamos calcular a temperatura máxima
         minima = (minima * 0.3); // vamos calcular a temperatura minima
@@ -18,9 +18,9 @@ public class projetoMeteorologico {
         return umiMedia; //pedimo para retornar a media o método calUmidade
     }
 
-    public static boolean validarTemperatura(double temp){ //usamos o método boolean, onde usamos true false
+    public static boolean validarTemperatura(double temp){ //usamos o método boolean, onde usamos true/false
 
-        if(temp >= -50 && temp <= 60){ // as temperaturas que cairem dentro do (-50, 60), entram no true, e rodam no sistemas 
+        if(temp >= -50 && temp <= 60){ // as temperaturas que cairem dentro do (-50, 60), entram no true, rodam no sistemas 
            return true;                //as que forem fora desse padrão, cairão no false, e não roda no sistema. 
         }else{
             return false;
@@ -96,9 +96,9 @@ public class projetoMeteorologico {
 
         temperaturaUm = calTemperatura(tempMedia[0][0],tempMedia[0][1]); // faz o calculo da tempMedia, la em calTemperatura e fica guardado em TemperaturaUm
         umidUM = calUmidade(medUmid[0][0], medUmid[0][1], medUmid[0][2]);//tempMedia e medUmid sao matrizes
-        climaUm = classificarClima(temperaturaUm, (int) umidUM); //camos jogar os resultados da TemperaturaUm e umidUm, dentro do classificarClima, para saber o tipo clima, e tudo isso fica dentro do climaUM
+        climaUm = classificarClima(temperaturaUm, (int) umidUM); //joga os resultados da TemperaturaUm e umidUm, dentro do classificarClima, para saber o tipo clima, e tudo isso fica dentro do climaUM
 
-        temperaturaDois = calTemperatura(tempMedia[1][0],tempMedia[1][1]);
+        temperaturaDois = calTemperatura(tempMedia[1][0],tempMedia[1][1]);  //chamamos o método calTemperatura, o metodo recebe dois valores de temperatura, vem da array.
         umidDois = calUmidade(medUmid[1][0], medUmid[1][1], medUmid[1][2]);
         climaDois = classificarClima(temperaturaDois, (int) umidDois);
 
@@ -111,8 +111,8 @@ public class projetoMeteorologico {
         climaQuatro = classificarClima(temperaturaQuatro, (int)umidQuatro);
 
         temperaturaQuinta = calTemperatura(tempMedia[4][0],tempMedia[4][1]);
-        umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);
-        climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);
+        umidQuinta = calUmidade(medUmid[4][0], medUmid[4][1], medUmid[4][2]);      // int a = 10;
+        climaQuinto = classificarClima(temperaturaQuinta, (int)umidQuinta);         // double b = a;
     
         temperaturaMeTotal = (temperaturaUm + temperaturaDois + temperaturaTres + temperaturaQuatro + temperaturaQuinta) / 5; // vamos calcular a temperatura media
         
@@ -126,23 +126,23 @@ public class projetoMeteorologico {
         };
             tempMaisQuente = temperaturass[0]; // pegamos a primeira temperatura como referencia
 
-                for(int i = 1; i < temperaturass.length; i++){
-                if(temperaturass[i] > tempMaisQuente){
-                tempMaisQuente = temperaturass[i];
+                for(int i = 1; i < temperaturass.length; i++){ // começa pela segunda cidade; depois e o quantidade de temperaturas, no caso são 5; compara uma em uma, somando.
+                if(temperaturass[i] > tempMaisQuente){ // esta fazendo as comparações entre as cidades
+                tempMaisQuente = temperaturass[i]; // achou a temperatura mais quente, ele guarda
             }
         }
 
-            tempMaisFria = temperaturass[0];
+            tempMaisFria = temperaturass[0]; // mesma coisa, esta pegando a primeia temperatura para fazer a comparação
 
-            for (int i = 1; i < temperaturass.length; i++) {
-            if (temperaturass[i] < tempMaisFria) {
-                tempMaisFria = temperaturass[i];
+            for (int i = 1; i < temperaturass.length; i++) { //pegando a segunda cidade para fazer a comparação; tamanho das temperaturas; soma um em um.
+            if (temperaturass[i] < tempMaisFria) { // vai fazer as comparações no loop
+                tempMaisFria = temperaturass[i];// guarda a temperatura mais fria.
             }
         }
 
 
 
-    System.out.printf("\n=========================================================================");
+    System.out.printf("\n========================================================================="); // (\n) pula uma linha antes
     System.out.printf("\n           SISTEMA DE ANÁLISE METEOROLÓGICA INTELIGENTE");
     System.out.printf("\n=========================================================================");
     
@@ -157,8 +157,8 @@ public class projetoMeteorologico {
     System.out.printf("\n5   | %.2f°C| %.2f°C | %.2f°C|  %.2f°C | %s    | VERDE   ", tempMedia[4][0],tempMedia[4][1], temperaturaQuinta, umidQuinta, climaQuinto );
     System.out.printf("\n-------------------------------------------------------------------------|");
     System.out.println(" ");
-    System.out.printf("\nESTATÍSTICAS GERAIS:");
-    System.out.printf("\nTemperatura média geral: %.2f°C ", temperaturaMeTotal); //%.2f = 
+    System.out.printf("\nESTATÍSTICAS GERAIS:");                                  // %s = imprime uma string
+    System.out.printf("\nTemperatura média geral: %.2f°C ", temperaturaMeTotal); //%.2f = imprime um número decimal com 2 casas decimais.
     System.out.printf("\nCidade mais quente: %.2f°C", tempMaisQuente);
     System.out.printf("\nCidade mais fria: %.2f°C", tempMaisFria);
      System.out.printf("\nCidade com maior amplitude: %.2f°C", cidadeMaiorAmplitude);
