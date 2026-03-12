@@ -58,7 +58,7 @@ public class projetoMeteorologico { // uma classe
         double maiorAmplitude = temperaturas[0][0] - temperaturas[0][1];
         int indiceMaior = 0; // indice da cidade
 
-        for(int i = 1; i < temperaturas.length; i++){ //começa na cidade 1; depois e a quantidade de cidade; e aumenta um em um, por isso 1++;
+        for(int i = 1; i < temperaturas.length; i++){ //metodo de loop, começa na cidade 1; depois e a quantidade de cidade; e aumenta um em um, por isso 1++;
                                                       // vai percorrer o tanto de cidades que tiver, no caso essa, são 5.
             double amplitude = temperaturas[i][0] - temperaturas[i][1];
 
@@ -82,7 +82,7 @@ public class projetoMeteorologico { // uma classe
         double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
             {32.5, 22.1},  //Cidade 1
             {28.3, 18.7},  //Cidade 2
-            {35.8, 24.9},  //Cidade 3
+            {35.8, 24.9},  //Cidade 3           conjunto de variavéis
             {30.2, 20.5},  //Cidade 4
             {25.7, 15.3}   //Cidade 5
         };
