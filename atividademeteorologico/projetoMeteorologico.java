@@ -79,14 +79,14 @@ public class projetoMeteorologico { // uma classe
         double temperaturaUm, temperaturaDois, temperaturaTres, temperaturaQuatro, temperaturaQuinta, temperaturaMeTotal, tempMaisQuente, tempMaisFria, cidadeMaiorAmplitude; //variaveis criadas
         String climaUm, climaDois, climaTres, climaQuatro, climaQuinto;//variaveis criadas
 
-        double[][]tempMedia = { //aqui estamos criando uma matriz de números, funcionando como linhase colunas
+        double[][]tempMedia = { //aqui estamos criando uma array de números, funcionando como linhase colunas
             {32.5, 22.1},  //Cidade 1
             {28.3, 18.7},  //Cidade 2
             {35.8, 24.9},  //Cidade 3           conjunto de variavéis
             {30.2, 20.5},  //Cidade 4
             {25.7, 15.3}   //Cidade 5
         };
-        int[][]medUmid = { //aqui criamos uma mtriz de números inteiros
+        int[][]medUmid = { //aqui criamos uma array de números inteiros
             {85, 60, 75},  //Cidade 1
             {78, 55, 70},  //Cidade 2
             {90, 65, 80},  //Cidade 3
