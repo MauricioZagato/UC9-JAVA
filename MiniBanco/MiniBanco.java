@@ -12,7 +12,7 @@ public class MiniBanco {
         System.out.println("0 - Sair");
         System.out.println("Escolha: ");
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("MiniBanco iniciado. ");
@@ -26,8 +26,26 @@ public class MiniBanco {
         String nome = scanner.next();
         System.out.printf("Olá, %s! Saldo inicial: R$ %.2f\n", nome, saldo);
 
+        while (opcao !=0){
         exibirMenu();
 
+        opcao = scanner.nextInt();
+
+        if(opcao == 1){
+            System.out.println(" [Depositar - em breve]");
+        }else if(opcao ==2){
+            System.out.println(" [Sacar - em breve]");
+        }else if(opcao ==3){
+            System.out.println(" [Consultar Saldo]");
+        }else if(opcao ==4){
+            System.out.println(" [Extretato - em breve]");
+        }else if(opcao == 0){
+            System.out.println("Até logo, " + nome + "!");
+        }else{
+            System.out.println(" Opção inválida");
+        }
+        }
+        
         scanner.close();
     }
 }
