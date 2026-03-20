@@ -104,7 +104,7 @@ public class MiniBanco {
                 }else {
                     double taxa = valorSaque * TAXA_SAQUE;
                     saldo = sacar(saldo, valorSaque);
-                    System.out.printf(" Saque realizado. Taxa cobrada: R$ %.2f%n taxa cobrada: R$ %.2f%n", taxa);
+                    System.out.printf(" Saque realizado. Taxa cobrada: R$ %.2f%n", taxa);
                     totalLinhas = registrar(extrato, totalLinhas, String.format("SAQUE - R$ %.2f => Saldo: R$ %.2f", valorSaque, saldo));
                 }                
                 // System.out.println(" [Sacar - em breve]");
